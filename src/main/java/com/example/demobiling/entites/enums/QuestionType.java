@@ -1,4 +1,4 @@
-package com.example.demobiling.entity.enums;
+package com.example.demobiling.entites.enums;
 
 public enum QuestionType {
 

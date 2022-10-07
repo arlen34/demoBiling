@@ -1,4 +1,4 @@
-package com.example.demobiling.entity;
+package com.example.demobiling.entites;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

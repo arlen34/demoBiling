@@ -1,6 +1,6 @@
-package com.example.demobiling.entity;
+package com.example.demobiling.entites;
 
-import com.example.demobiling.entity.enums.Status;
+import com.example.demobiling.entites.enums.Status;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
