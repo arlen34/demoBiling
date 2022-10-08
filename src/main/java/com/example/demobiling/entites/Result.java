@@ -29,7 +29,7 @@ public class Result {
 
     private Integer fullScore;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "result")
     private List<ClientsAnswer> clientsAnswers;
 
     @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.DETACH})
