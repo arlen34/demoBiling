@@ -23,8 +23,11 @@ public class ClientsAnswer {
 
     private Integer score;
 
-    private List<Option> clientsAnswers;
-
+    @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,
+            CascadeType.PERSIST,CascadeType.REFRESH})
     private Question question;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    List<Option> optionsAnswers;
 
 }

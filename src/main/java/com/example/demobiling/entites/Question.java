@@ -39,5 +39,4 @@ public class Question {
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Option> options;
-
 }
