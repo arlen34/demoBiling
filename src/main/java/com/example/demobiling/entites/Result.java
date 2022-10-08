@@ -3,15 +3,17 @@ package com.example.demobiling.entites;
 import com.example.demobiling.entites.enums.Status;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "results")
 public class Result {
 
@@ -27,13 +29,10 @@ public class Result {
 
     private Integer fullScore;
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.DETACH})
-    private ClientsAnswer clientsAnswer;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "result")
+    private List<ClientsAnswer> clientsAnswers;
 
     @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.DETACH})
     private Client client;
-
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.DETACH})
-    private Test test;
 
 }
