@@ -27,4 +27,10 @@ public class Option {
 
     private OptionType optionType;
 
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.DETACH,CascadeType.PERSIST,CascadeType.REFRESH})
+    private Question question;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private ClientsAnswer clientsAnswer;
+
 }

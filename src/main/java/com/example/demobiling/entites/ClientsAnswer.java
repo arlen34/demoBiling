@@ -27,7 +27,11 @@ public class ClientsAnswer {
             CascadeType.PERSIST,CascadeType.REFRESH})
     private Question question;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "clientsAnswer")
     List<Option> optionsAnswers;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Result result;
+
 
 }
