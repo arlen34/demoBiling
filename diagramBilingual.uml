@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>bee0e2b8-f14f-4827-8819-326241461c1a.SCHEMA:practic.public</OriginalElement>
+  <nodes>
+    <node x="160.29590288315626" y="229.25250379362672">bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.clients_answers</node>
+    <node x="119.35633413214828" y="29.126251896813358">bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.options</node>
+    <node x="-83.5" y="-149.0">bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.auth_info</node>
+    <node x="124.99999999999997" y="-149.0">bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.tests</node>
+    <node x="-79.0" y="44.0">bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.clients</node>
+    <node x="364.97468817409185" y="-151.40582959641256">bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.questions</node>
+    <node x="-102.0" y="229.25250379362672">bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.results</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.options" target="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.clients_answers" relationship="REFERENCES">
+      <point x="24.439568751007982" y="82.5" />
+      <point x="0.0" y="-71.5" />
+    </edge>
+    <edge source="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.questions" target="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.tests" relationship="REFERENCES">
+      <point x="-101.74038324135648" y="-51.549327354260114" />
+      <point x="312.5201793721973" y="-54.455156950672674" />
+      <point x="312.5201793721973" y="-54.45515695067266" />
+      <point x="259.0" y="-54.45515695067266" />
+      <point x="67.00000000000003" y="0.0" />
+    </edge>
+    <edge source="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.clients" target="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.auth_info" relationship="REFERENCES">
+      <point x="-5.0" y="-49.5" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.options" target="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.questions" relationship="REFERENCES">
+      <point x="87.5" y="0.0" />
+      <point x="-99.5" y="114.53208149322592" />
+    </edge>
+    <edge source="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.clients_answers" target="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.results" relationship="REFERENCES">
+      <point x="-71.0" y="11.0" />
+      <point x="101.5" y="0.0" />
+    </edge>
+    <edge source="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.clients_answers" target="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.questions" relationship="REFERENCES">
+      <point x="71.0" y="0.0" />
+      <point x="464.47468817409185" y="300.7525037936267" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.results" target="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.tests" relationship="REFERENCES">
+      <point x="90.5" y="-82.5" />
+      <point x="90.0" y="-77.5" />
+      <point x="-67.0" y="0.0" />
+    </edge>
+    <edge source="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.results" target="bee0e2b8-f14f-4827-8819-326241461c1a.TABLE:practic.public.clients" relationship="REFERENCES">
+      <point x="-15.0" y="-82.5" />
+      <point x="-15.0" y="49.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6073191489361704" showDependencies="false" x="394.2734791459987" y="222.80246138274725" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
