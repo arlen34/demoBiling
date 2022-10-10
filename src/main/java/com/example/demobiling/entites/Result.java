@@ -1,15 +1,15 @@
 package com.example.demobiling.entites;
 
 import com.example.demobiling.entites.enums.Status;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
+
+import static javax.persistence.CascadeType.*;
 
 @Entity
 @Getter
@@ -23,7 +23,6 @@ public class Result {
     @SequenceGenerator(name = "result_generator", sequenceName = "result_id_sequence", allocationSize = 1)
     private Long id;
 
-
     private LocalDateTime dateOfSubmission;
 
     @Enumerated(EnumType.STRING)
@@ -34,9 +33,9 @@ public class Result {
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "result")
     private List<ClientsAnswer> clientsAnswers;
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.DETACH})
+    @ManyToOne(cascade = {MERGE, DETACH})
     private Client client;
 
-    @OneToOne(cascade = {CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.PERSIST})
+    @ManyToOne(cascade = {MERGE,DETACH,REFRESH,PERSIST})
     private Test test;
 }

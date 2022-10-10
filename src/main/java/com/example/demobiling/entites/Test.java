@@ -23,13 +23,8 @@ public class Test {
 
     private String title;
 
-    private String type;
-
     private Boolean isActive;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "test")
     private List<Question> question;
-
-    @OneToOne(cascade = {CascadeType.ALL},mappedBy = "test")
-    private Result result;
 }

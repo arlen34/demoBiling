@@ -1,11 +1,12 @@
 package com.example.demobiling.entites;
 
-import com.example.demobiling.entites.enums.OptionType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+
+import static javax.persistence.CascadeType.*;
 
 @Entity
 @Table(name = "options")
@@ -19,14 +20,13 @@ public class Option {
     @SequenceGenerator(name = "option_generator", sequenceName = "option_id_sequence", allocationSize = 1)
     private Long id;
 
-    private String optionAnswer;
-//    private String optionName;
-    private Boolean isTrue = false;
+    private String option;
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.DETACH,CascadeType.PERSIST,CascadeType.REFRESH})
+    private Boolean isTrue;
+
+    @ManyToOne(cascade = {MERGE, DETACH, PERSIST, REFRESH})
     private Question question;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private ClientsAnswer clientsAnswer;
-
 }

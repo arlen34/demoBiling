@@ -9,6 +9,8 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
+import static javax.persistence.CascadeType.*;
+
 @Entity
 @Table(name = "questions")
 @Getter
@@ -31,13 +33,7 @@ public class Question {
 
     private int numberOfReplays;
 
-    private String image;
-
-    private String audio;
-
     private int duration;
-
-    private int numberOfWords;//counter for question type: respond in at least N words;
 
     private String shortDescription;
 
@@ -45,16 +41,20 @@ public class Question {
 
     private String correctAnswer;
 
+    @OneToOne(cascade = ALL)
+//    @JoinColumn(name = "content_id")
+    private Content content;
+
     @Enumerated(EnumType.STRING)
     private OptionType optionType;
 
     @Enumerated(EnumType.STRING)
     private QuestionType questionType;
 
-    @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.PERSIST})
+    @ManyToOne(cascade = {DETACH, MERGE, REFRESH, PERSIST})
     private Test test;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "question")
+    @OneToMany(cascade = ALL, mappedBy = "question")
     private List<Option> options;
 
 
