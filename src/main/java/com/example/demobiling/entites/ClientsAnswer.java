@@ -20,8 +20,9 @@ public class ClientsAnswer {
     private Long id;
 
     private String answer;
+    private int numberOfWords;//user answer counter words
 
-    private Integer score;
+    private int score;
 
     @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,
             CascadeType.PERSIST,CascadeType.REFRESH})

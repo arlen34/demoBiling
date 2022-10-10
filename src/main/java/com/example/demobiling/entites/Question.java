@@ -1,5 +1,6 @@
 package com.example.demobiling.entites;
 
+import com.example.demobiling.entites.enums.OptionType;
 import com.example.demobiling.entites.enums.QuestionType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,23 +21,41 @@ public class Question {
     @SequenceGenerator(name = "question_generator", sequenceName = "question_id_sequence", allocationSize = 1)
     private Long id;
 
-    private String name;
-
     private String title;
+
+    private String statement;
+
+    private String passage;
 
     private Boolean isActive;
 
-    private Integer numberOfReplays;
+    private int numberOfReplays;
 
-    private String imageLink;
+    private String image;
 
-    private Integer duration;
+    private String audio;
+
+    private int duration;
+
+    private int numberOfWords;//counter for question type: respond in at least N words;
 
     private String shortDescription;
+
+    private int minNumberOfWords;
+
+    private String correctAnswer;
+
+    @Enumerated(EnumType.STRING)
+    private OptionType optionType;
 
     @Enumerated(EnumType.STRING)
     private QuestionType questionType;
 
+    @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.PERSIST})
+    private Test test;
+
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "question")
     private List<Option> options;
+
+
 }

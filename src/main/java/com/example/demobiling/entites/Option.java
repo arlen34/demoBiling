@@ -19,13 +19,9 @@ public class Option {
     @SequenceGenerator(name = "option_generator", sequenceName = "option_id_sequence", allocationSize = 1)
     private Long id;
 
-    private String optionName;
-
-    private String audioLink;
-
-    private Boolean isTrue;
-
-    private OptionType optionType;
+    private String optionAnswer;
+//    private String optionName;
+    private Boolean isTrue = false;
 
     @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.DETACH,CascadeType.PERSIST,CascadeType.REFRESH})
     private Question question;

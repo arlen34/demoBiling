@@ -24,10 +24,4 @@ public class Client {
     @OneToOne(cascade = CascadeType.ALL)
     private AuthInfo authInfo;
 
-    @ManyToMany(cascade = {CascadeType.DETACH,CascadeType.MERGE,
-            CascadeType.PERSIST,CascadeType.REFRESH})
-    @JoinTable(name = "clients_tests",
-            joinColumns = @JoinColumn(name = "client_id"),
-            inverseJoinColumns = @JoinColumn(name = "test_id"))
-    private List<Test> tests;
 }

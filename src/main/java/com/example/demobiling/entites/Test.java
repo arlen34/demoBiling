@@ -27,10 +27,9 @@ public class Test {
 
     private Boolean isActive;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "test")
     private List<Question> question;
 
-    @ManyToMany(cascade = {CascadeType.DETACH,CascadeType.MERGE,
-            CascadeType.PERSIST,CascadeType.REFRESH},mappedBy = "tests")
-    private List<Client> clients;
+    @OneToOne(cascade = {CascadeType.ALL},mappedBy = "test")
+    private Result result;
 }
