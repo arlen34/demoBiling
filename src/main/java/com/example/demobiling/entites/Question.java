@@ -42,7 +42,6 @@ public class Question {
     private String correctAnswer;
 
     @OneToOne(cascade = ALL)
-//    @JoinColumn(name = "content_id")
     private Content content;
 
     @Enumerated(EnumType.STRING)
@@ -51,10 +50,10 @@ public class Question {
     @Enumerated(EnumType.STRING)
     private QuestionType questionType;
 
-    @ManyToOne(cascade = {DETACH, MERGE, REFRESH, PERSIST})
+    @ManyToOne(cascade = {DETACH, MERGE, REFRESH},fetch = FetchType.LAZY)
     private Test test;
 
-    @OneToMany(cascade = ALL, mappedBy = "question")
+    @OneToMany(cascade = ALL,fetch = FetchType.EAGER,mappedBy = "question")
     private List<Option> options;
 
 

@@ -33,7 +33,7 @@ public class Result {
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "result")
     private List<ClientsAnswer> clientsAnswers;
 
-    @ManyToOne(cascade = {MERGE, DETACH})
+    @ManyToOne(cascade = {MERGE, DETACH},fetch = FetchType.LAZY)
     private Client client;
 
     @ManyToOne(cascade = {MERGE,DETACH,REFRESH,PERSIST})

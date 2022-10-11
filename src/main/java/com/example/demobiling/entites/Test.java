@@ -19,7 +19,7 @@ public class Test {
     @SequenceGenerator(name = "test_generator", sequenceName = "test_id_sequence", allocationSize = 1)
     private Long id;
 
-    private String name;
+    private String shortDescription;
 
     private String title;
 

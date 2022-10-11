@@ -27,6 +27,6 @@ public class Option {
     @ManyToOne(cascade = {MERGE, DETACH, PERSIST, REFRESH})
     private Question question;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {DETACH,REFRESH,PERSIST,MERGE},fetch = FetchType.LAZY)
     private ClientsAnswer clientsAnswer;
 }

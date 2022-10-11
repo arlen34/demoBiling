@@ -7,7 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
-import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.CascadeType.*;
 
 @Entity
 @Table(name = "clients_answers")
@@ -21,24 +21,20 @@ public class ClientsAnswer {
     @SequenceGenerator(name = "clients_answer_generator", sequenceName = "clients_answer_id_sequence", allocationSize = 1)
     private Long id;
 
-
-
-    private int numberOfWords;//user answer counter words
+    private int numberOfWords;//user's answer's counter words
 
     private int score;
 
     @OneToOne(cascade = ALL)
-//    @JoinColumn(name = "content_id")
     private Content content;
 
-    @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,
-            CascadeType.PERSIST,CascadeType.REFRESH})
+    @ManyToOne(cascade = {DETACH, MERGE, REFRESH},fetch = FetchType.LAZY)
     private Question question;
 
-    @OneToMany(cascade = ALL,mappedBy = "clientsAnswer")
+    @OneToMany(cascade = ALL, mappedBy = "clientsAnswer")
     List<Option> optionsAnswers;
 
-    @ManyToOne(cascade = ALL)
+    @ManyToOne(cascade = {DETACH,PERSIST,MERGE,REMOVE})
     private Result result;
 
 
