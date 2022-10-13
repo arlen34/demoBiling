@@ -1,8 +1,6 @@
 package com.example.demobiling.entites;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,6 +10,8 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Client {
 
     @Id
@@ -19,7 +19,9 @@ public class Client {
     @SequenceGenerator(name = "client_generator", sequenceName = "client_id_sequence", allocationSize = 1)
     private Long id;
 
-    private String full_name;
+    private String firstName;
+
+    private String lastName;
 
     @OneToOne(cascade = CascadeType.ALL)
     private AuthInfo authInfo;

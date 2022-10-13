@@ -1,9 +1,7 @@
 package com.example.demobiling.entites;
 
 import com.example.demobiling.entites.enums.Role;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -16,6 +14,8 @@ import java.util.Collections;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class AuthInfo implements UserDetails {
 
     @Id
